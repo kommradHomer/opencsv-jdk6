@@ -31,12 +31,12 @@ import java.util.Map;
  * Maps data to objects using the column names in the first row of the csv
  * file as reference.  This way the column order does not matter.
  *
- * @param <T>
+ * @param <T> lelelele
  */
 
 public class HeaderColumnNameMappingStrategy<T> implements MappingStrategy<T> {
    protected String[] header;
-   protected Map<String, Integer> indexLookup = new HashMap<>();
+   protected Map<String, Integer> indexLookup = new HashMap();
    protected Map<String, PropertyDescriptor> descriptorMap = null;
    protected Class<T> type;
 
@@ -144,7 +144,7 @@ public class HeaderColumnNameMappingStrategy<T> implements MappingStrategy<T> {
     * @throws IntrospectionException - thrown on error getting information about the bean.
     */
    protected Map<String, PropertyDescriptor> loadDescriptorMap() throws IntrospectionException {
-      Map<String, PropertyDescriptor> map = new HashMap<>();
+      Map<String, PropertyDescriptor> map = new HashMap<String, PropertyDescriptor>();
 
       PropertyDescriptor[] descriptors;
       descriptors = loadDescriptors(getType());  //TODO refactor this class to use T instead of getType.
